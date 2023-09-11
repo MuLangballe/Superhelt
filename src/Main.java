@@ -34,7 +34,6 @@ public class Main {
                 System.out.println("Hvor stærk er superhelten(i tal)?");
                 int superHeroStrength = keyboard.nextInt();
 
-
                 superheroDatabase.createSuperhero(superHeroName, superHeroRealName, superHeroSuperPower, superHeroYearCreated, isSuperheroHuman, superHeroStrength);
             }
         } while (menuChoice != 9);
