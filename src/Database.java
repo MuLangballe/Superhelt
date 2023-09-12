@@ -2,8 +2,6 @@ import java.util.ArrayList;
 
 public class Database {
     ArrayList<Superhero> superheroes = new ArrayList<>();
-   // private Superhero[] superheroes;
-    //int count = 0;
 
     public Database(){
 

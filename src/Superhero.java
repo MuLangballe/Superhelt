@@ -17,14 +17,13 @@ public class Superhero {
 
     @Override
     public String toString() {
-        return "Superhero{" +
-                "name='" + name + '\'' +
-                ", realName='" + realName + '\'' +
-                ", superPower='" + superPower + '\'' +
-                ", yearCreated=" + yearCreated +
-                ", isHuman=" + isHuman +
-                ", strength=" + strength +
-                '}';
+        return "Liste af Superhelte: " +
+                "Superheltenavn: '" + name + '\'' +
+                ", Virkelige navn: '" + realName + '\'' +
+                ", Superkraft: '" + superPower + '\'' +
+                ", Oprindelsesår: " + yearCreated +
+                ", Er menneske: " + isHuman +
+                ", Styrke: " + strength;
     }
 
     public String getName() {

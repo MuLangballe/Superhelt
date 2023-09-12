@@ -6,7 +6,7 @@ public class Main {
         Database superheroDatabase = new Database();
 
         do {
-            System.out.println("Velkommen til SUPERHERO UNIVERSET. \n 1. Opret superhelt \n 9. Afslut");
+            System.out.println("Velkommen til SUPERHERO UNIVERSET. \n 1. Opret superhelt \n 2. Se liste af superhelte \n 9. Afslut");
             Scanner keyboard = new Scanner(System.in);
             menuChoice = keyboard.nextInt();
             keyboard.nextLine();
@@ -37,6 +37,9 @@ public class Main {
                 int superHeroStrength = keyboard.nextInt();
 
                 superheroDatabase.createSuperhero(superHeroName, superHeroRealName, superHeroSuperPower, superHeroYearCreated, isSuperheroHuman, superHeroStrength);
+                superheroDatabase.seeAllHeroes();
+            } else if (menuChoice == 2) {
+                System.out.println("Liste af superhelte: ");
                 superheroDatabase.seeAllHeroes();
             }
         } while (menuChoice != 9);
