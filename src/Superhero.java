@@ -15,6 +15,17 @@ public class Superhero {
         this.strength = strength;
     }
 
+    @Override
+    public String toString() {
+        return "Superhero{" +
+                "name='" + name + '\'' +
+                ", realName='" + realName + '\'' +
+                ", superPower='" + superPower + '\'' +
+                ", yearCreated=" + yearCreated +
+                ", isHuman=" + isHuman +
+                ", strength=" + strength +
+                '}';
+    }
 
     public String getName() {
         return name;

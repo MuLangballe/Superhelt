@@ -3,7 +3,7 @@ public class Database {
     int count = 0;
 
     public Database(){
-        this.superheroes = new Superhero[1];
+        this.superheroes = new Superhero[5];
     }
 
     public void createSuperhero(String name, String realName, String superPower, int yearCreated, boolean isHuman, int strength){
