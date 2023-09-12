@@ -37,6 +37,7 @@ public class Main {
                 int superHeroStrength = keyboard.nextInt();
 
                 superheroDatabase.createSuperhero(superHeroName, superHeroRealName, superHeroSuperPower, superHeroYearCreated, isSuperheroHuman, superHeroStrength);
+                superheroDatabase.seeAllHeroes();
             }
         } while (menuChoice != 9);
     }
