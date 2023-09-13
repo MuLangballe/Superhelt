@@ -8,8 +8,8 @@ public class Database {
     }
 
     public  void seeAllHeroes (){
-        for (Superhero temp : superheroes) {
-            System.out.println(temp);
+        for (Superhero superhero : superheroes) {
+            System.out.println(superhero);
         }
     }
 }

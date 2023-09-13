@@ -22,8 +22,16 @@ public class Superhero {
                 ", Virkelige navn: '" + realName + '\'' +
                 ", Superkraft: '" + superPower + '\'' +
                 ", Oprindelsesår: " + yearCreated +
-                ", Er menneske: " + isHuman +
+                ", Er menneske: " + isHumanFormatter(isHuman) +
                 ", Styrke: " + strength;
+    }
+
+    private String isHumanFormatter(boolean isHuman){
+        if (isHuman) {
+            return "Ja";
+            } else {
+            return "Nej";
+        }
     }
 
     public String getName() {
