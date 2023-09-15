@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -50,7 +51,7 @@ public class UserInterface {
             } else if (menuChoice == 3) {
                 System.out.println("indtast søgning: ");
                 String searchSuperhero = keyboard.nextLine();
-                 var searchResults = superheroDatabase.findSuperhero(searchSuperhero);
+                 ArrayList<Superhero> searchResults = superheroDatabase.findSuperhero(searchSuperhero);
                  if (searchResults.isEmpty()) {
                      System.out.println("Kunne ikke finde superhelten");
                  } else {

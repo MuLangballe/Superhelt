@@ -25,7 +25,6 @@ public class Database {
     }
 
     public void editSuperhero(String superhero, Scanner keyboard) {
-        // String searchToEdit = keyboard.nextLine();
         ArrayList<Superhero> resultsToEdit = findSuperhero(superhero);
         Superhero superheroToEdit = null;
 
