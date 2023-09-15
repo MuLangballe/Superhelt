@@ -6,7 +6,12 @@ public class UserInterface {
         Database superheroDatabase = new Database();
 
         do {
-            System.out.println("Velkommen til SUPERHERO UNIVERSET. \n 1. Opret superhelt \n 2. Se liste af superhelte \n 3. Søg efter superhelt \n 9. Afslut");
+            System.out.println("Velkommen til SUPERHERO UNIVERSET. \n " +
+                    "1. Opret superhelt \n " +
+                    "2. Se liste af superhelte \n " +
+                    "3. Søg efter superhelt \n " +
+                    "4. Rediger eksistrende superhelt \n" +
+                    "9. Afslut");
             Scanner keyboard = new Scanner(System.in);
             menuChoice = keyboard.nextInt();
             keyboard.nextLine();
@@ -47,6 +52,10 @@ public class UserInterface {
                 String searchSuperhero = keyboard.nextLine();
                 superheroDatabase.findSuperhero(searchSuperhero);
 
+            } else if (menuChoice == 4) {
+                System.out.println("Indtast superhelten du ønsker at redigere: ");
+                String superheroToEdit = keyboard.nextLine();
+                superheroDatabase.editSuperhero(superheroToEdit);
 
             }
         } while (menuChoice != 9);

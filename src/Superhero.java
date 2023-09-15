@@ -81,4 +81,5 @@ public class Superhero {
     public void setStrength(int strength) {
         this.strength = strength;
     }
+
 }
