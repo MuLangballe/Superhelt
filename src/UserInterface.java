@@ -10,7 +10,7 @@ public class UserInterface {
                     "1. Opret superhelt \n " +
                     "2. Se liste af superhelte \n " +
                     "3. Søg efter superhelt \n " +
-                    "4. Rediger eksistrende superhelt \n" +
+                    "4. Rediger eksistrende superhelt \n " +
                     "9. Afslut");
             Scanner keyboard = new Scanner(System.in);
             menuChoice = keyboard.nextInt();
@@ -50,12 +50,19 @@ public class UserInterface {
             } else if (menuChoice == 3) {
                 System.out.println("indtast søgning: ");
                 String searchSuperhero = keyboard.nextLine();
-                superheroDatabase.findSuperhero(searchSuperhero);
+                 var searchResults = superheroDatabase.findSuperhero(searchSuperhero);
+                 if (searchResults.isEmpty()) {
+                     System.out.println("Kunne ikke finde superhelten");
+                 } else {
+                     for (Superhero superhero: searchResults){
+                         System.out.println(superhero);
+                     }
+                 }
 
             } else if (menuChoice == 4) {
                 System.out.println("Indtast superhelten du ønsker at redigere: ");
                 String superheroToEdit = keyboard.nextLine();
-                superheroDatabase.editSuperhero(superheroToEdit);
+                superheroDatabase.editSuperhero(superheroToEdit, keyboard);
 
             }
         } while (menuChoice != 9);
