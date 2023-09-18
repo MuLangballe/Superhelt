@@ -5,6 +5,7 @@ public class UserInterface {
     public void startProgram() {
         int menuChoice;
         Database superheroDatabase = new Database();
+        Scanner keyboard = new Scanner(System.in);
 
         do {
             System.out.println("Velkommen til SUPERHERO UNIVERSET. \n " +
@@ -13,9 +14,13 @@ public class UserInterface {
                     "3. Søg efter superhelt \n " +
                     "4. Rediger eksistrende superhelt \n " +
                     "9. Afslut");
-            Scanner keyboard = new Scanner(System.in);
+            while(!keyboard.hasNextInt()) {
+                String text = keyboard.next();
+                System.out.println("'" + text + "'" + " er ikke et gyldigt tal. Prøv igen.");
+            }
             menuChoice = keyboard.nextInt();
             keyboard.nextLine();
+
             if (menuChoice == 1) {
                 System.out.println("Tilføj superhelt: indtast superheltens navn: ");
                 String superHeroName = keyboard.nextLine();
@@ -44,6 +49,7 @@ public class UserInterface {
 
                 superheroDatabase.createSuperhero(superHeroName, superHeroRealName, superHeroSuperPower, superHeroYearCreated, isSuperheroHuman, superHeroStrength);
                 superheroDatabase.seeAllHeroes();
+
             } else if (menuChoice == 2) {
                 System.out.println("Liste af superhelte: ");
                 superheroDatabase.seeAllHeroes();
@@ -52,6 +58,7 @@ public class UserInterface {
                 System.out.println("indtast søgning: ");
                 String searchSuperhero = keyboard.nextLine();
                  ArrayList<Superhero> searchResults = superheroDatabase.findSuperhero(searchSuperhero);
+
                  if (searchResults.isEmpty()) {
                      System.out.println("Kunne ikke finde superhelten");
                  } else {
@@ -66,7 +73,7 @@ public class UserInterface {
                 superheroDatabase.editSuperhero(superheroToEdit, keyboard);
 
             }
-        } while (menuChoice != 9);
-    }
+    } while (menuChoice != 9);
+}
 }
 
