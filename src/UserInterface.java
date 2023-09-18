@@ -14,7 +14,7 @@ public class UserInterface {
                     "3. Søg efter superhelt \n " +
                     "4. Rediger eksistrende superhelt \n " +
                     "9. Afslut");
-            while(!keyboard.hasNextInt()) {
+            while (!keyboard.hasNextInt()) {
                 String text = keyboard.next();
                 System.out.println("'" + text + "'" + " er ikke et gyldigt tal. Prøv igen.");
             }
@@ -32,6 +32,10 @@ public class UserInterface {
                 String superHeroSuperPower = keyboard.nextLine();
 
                 System.out.println("Indtast året superhelten blev skabt: ");
+                while (!keyboard.hasNextInt()) {
+                    String text = keyboard.next();
+                    System.out.println("'" + text + "'" + " er ikke et gyldigt tal. Prøv igen.");
+                }
                 int superHeroYearCreated = keyboard.nextInt();
                 keyboard.nextLine();
 
@@ -42,9 +46,14 @@ public class UserInterface {
                     case 'j' -> {
                     }
                     case 'n' -> isSuperheroHuman = false;
+                    default -> System.out.println("Ugyldigt input.");
                 }
 
                 System.out.println("Hvor stærk er superhelten(i tal)?");
+                while (!keyboard.hasNextInt()) {
+                    String text = keyboard.next();
+                    System.out.println("'" + text + "'" + " er ikke et gyldigt tal. Prøv igen.");
+                }
                 int superHeroStrength = keyboard.nextInt();
 
                 superheroDatabase.createSuperhero(superHeroName, superHeroRealName, superHeroSuperPower, superHeroYearCreated, isSuperheroHuman, superHeroStrength);
@@ -57,15 +66,15 @@ public class UserInterface {
             } else if (menuChoice == 3) {
                 System.out.println("indtast søgning: ");
                 String searchSuperhero = keyboard.nextLine();
-                 ArrayList<Superhero> searchResults = superheroDatabase.findSuperhero(searchSuperhero);
+                ArrayList<Superhero> searchResults = superheroDatabase.findSuperhero(searchSuperhero);
 
-                 if (searchResults.isEmpty()) {
-                     System.out.println("Kunne ikke finde superhelten");
-                 } else {
-                     for (Superhero superhero: searchResults){
-                         System.out.println(superhero);
-                     }
-                 }
+                if (searchResults.isEmpty()) {
+                    System.out.println("Kunne ikke finde superhelten");
+                } else {
+                    for (Superhero superhero : searchResults) {
+                        System.out.println(superhero);
+                    }
+                }
 
             } else if (menuChoice == 4) {
                 System.out.println("Indtast superhelten du ønsker at redigere: ");
@@ -73,7 +82,7 @@ public class UserInterface {
                 superheroDatabase.editSuperhero(superheroToEdit, keyboard);
 
             }
-    } while (menuChoice != 9);
-}
+        } while (menuChoice != 9);
+    }
 }
 

@@ -17,7 +17,6 @@ public class Database {
         ArrayList<Superhero> results = new ArrayList<>();
         for (Superhero superhero1 : superheroes) {
             if (superhero1.getName().toLowerCase().contains(superhero.toLowerCase())) {
-                System.out.println("Søgeresultater: ");
                 results.add(superhero1);
             }
         }
@@ -28,9 +27,14 @@ public class Database {
         ArrayList<Superhero> resultsToEdit = findSuperhero(superhero);
         Superhero superheroToEdit = null;
 
-        if (resultsToEdit.size() == 0) {
+        while(resultsToEdit.isEmpty()) {
             System.out.println("Superhelt ikke fundet!");
-        } else if (resultsToEdit.size() > 1) {
+            System.out.println("Indtast superhelten du ønsker at redigere: ");
+            String newSearch = keyboard.nextLine();
+            resultsToEdit = findSuperhero(newSearch);
+        }
+
+        if (resultsToEdit.size() > 1) {
             System.out.println("Vælg superhelt: ");
             int count = 1;
             for (Superhero sh : resultsToEdit) {
